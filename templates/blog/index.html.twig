@@ -3,18 +3,36 @@
 {% block title %}Hello BlogController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/proxi/Documents/tuto_symfo/demi/src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/proxi/Documents/tuto_symfo/demi/templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <section class="Articles">
+        <article>
+            <h2>Titre de l'article</h2>
+            <div class="metadata">Ecrit le 10/05/2022 à 19h00 dans la catégorie politique</div>
+            <div class="content">
+                <img src="https://via.placeholder.com/350x150.png" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quisquam voluptatem sint maxime nesciunt mollitia.</p>
+                <p>Velit, dolore deserunt? Laboriosam, magni beatae? Minus soluta fugiat amet officiis assumenda deserunt commodi inventore.</p>
+                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </article>
+        <article>
+            <h2>Titre de l'article</h2>
+            <div class="metadata">Ecrit le 10/05/2022 à 19h00 dans la catégorie politique</div>
+            <div class="content">
+                <img src="https://via.placeholder.com/350x150.png" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eos accusantium vitae enim, adipisci omnis.</p>
+                <p>Officia est expedita quis aperiam nesciunt eveniet similique, temporibus amet dolorem vero eligendi exercitationem iste!</p>
+                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </article>
+        <article>
+            <h2>Titre de l'article</h2>
+            <div class="metadata">Ecrit le 10/05/2022 à 19h00 dans la catégorie politique</div>
+            <div class="content">
+                <img src="https://via.placeholder.com/350x150.png" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat iusto molestias laborum nostrum, sapiente voluptatum!</p>
+                <p>Expedita repellat maiores, alias ut incidunt quidem porro et mollitia, delectus, tempora temporibus est quos.</p>
+                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </article>
+    </section>
 {% endblock %}
