@@ -4,35 +4,17 @@
 
 {% block body %}
     <section class="Articles">
+
+    {% for article in articles %}
         <article>
-            <h2>Titre de l'article</h2>
-            <div class="metadata">Ecrit le 10/05/2022 à 19h00 dans la catégorie politique</div>
+            <h2>{{ article.title }}</h2>
+            <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }} dans la catégorie politique</div>
             <div class="content">
-                <img src="https://via.placeholder.com/350x150.png" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quisquam voluptatem sint maxime nesciunt mollitia.</p>
-                <p>Velit, dolore deserunt? Laboriosam, magni beatae? Minus soluta fugiat amet officiis assumenda deserunt commodi inventore.</p>
+                <img src="{{ article.image }}" alt="">
+                {{ article.content | raw}}
                 <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
             </div>
         </article>
-        <article>
-            <h2>Titre de l'article</h2>
-            <div class="metadata">Ecrit le 10/05/2022 à 19h00 dans la catégorie politique</div>
-            <div class="content">
-                <img src="https://via.placeholder.com/350x150.png" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eos accusantium vitae enim, adipisci omnis.</p>
-                <p>Officia est expedita quis aperiam nesciunt eveniet similique, temporibus amet dolorem vero eligendi exercitationem iste!</p>
-                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
-            </div>
-        </article>
-        <article>
-            <h2>Titre de l'article</h2>
-            <div class="metadata">Ecrit le 10/05/2022 à 19h00 dans la catégorie politique</div>
-            <div class="content">
-                <img src="https://via.placeholder.com/350x150.png" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat iusto molestias laborum nostrum, sapiente voluptatum!</p>
-                <p>Expedita repellat maiores, alias ut incidunt quidem porro et mollitia, delectus, tempora temporibus est quos.</p>
-                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
-            </div>
-        </article>
+    {% endfor %}
     </section>
 {% endblock %}
