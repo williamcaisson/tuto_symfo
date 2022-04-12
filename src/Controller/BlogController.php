@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
+use App\form\ArticleType;
 
 
 class BlogController extends AbstractController
@@ -51,11 +52,13 @@ class BlogController extends AbstractController
         }
 
 
-        $form = $this->createFormBuilder($article)
-                    ->add('title')
-                    ->add('content')
-                    ->add('image')
-                    ->getForm();
+        // $form = $this->createFormBuilder($article)
+        //             ->add('title')
+        //             ->add('content')
+        //             ->add('image')
+        //             ->getForm();
+
+        $form = $this->createForm(ArticleType::class);
         $form->handleRequest(($request));
 
         if($form->isSubmitted() && $form->isValid()){
