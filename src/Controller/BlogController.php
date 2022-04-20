@@ -41,6 +41,7 @@ class BlogController extends AbstractController
         ]);
     }
     /**
+<<<<<<< HEAD
      * @Route("/blog/new", name="blog_create")
      * @Route("/blog/{id}/edit", name="blog_edit")
      */
@@ -86,6 +87,12 @@ class BlogController extends AbstractController
         return $this->render('blog/show.html.twig',[
                             'article' => $article
         ]);
+=======
+     * @Route("/blog/article/12", name="blog_show")
+     */
+    public function show(){
+        return $this->render('blog/show.html.twig');
+>>>>>>> parent of 2dd79ad... link des boutons lire plus
     }
 
 }
