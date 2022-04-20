@@ -3,9 +3,12 @@
 namespace App\Entity;
 
 use App\Repository\ArticlesRepository;
+// <<<<<<< HEAD
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
+// =======
+// >>>>>>> parent of 1a0498e... Fin du tuto2
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,7 +25,6 @@ class Articles
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min=10, max=255)
      */
     private $title;
 
@@ -33,9 +35,6 @@ class Articles
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Url(
-     *    message = "The url is not a valid url",
-     * )
      */
     private $image;
 
