@@ -32,6 +32,7 @@ class BlogController extends AbstractController
             'articles' => $articles
         ]);
     }
+
     /**
      * @Route("/", name="home")
      */
@@ -41,58 +42,12 @@ class BlogController extends AbstractController
         ]);
     }
     /**
-<<<<<<< HEAD
-     * @Route("/blog/new", name="blog_create")
-     * @Route("/blog/{id}/edit", name="blog_edit")
-     */
-    public function form(Articles $article = null, Request $request, EntityManagerInterface $manager){
 
-      
-        if(!$article){
-            $article = new Articles();
-        }
-
-
-        // $form = $this->createFormBuilder($article)
-        //             ->add('title')
-        //             ->add('content')
-        //             ->add('image')
-        //             ->getForm();
-
-        $form = $this->createForm(ArticleType::class);
-        $form->handleRequest(($request));
-
-        if($form->isSubmitted() && $form->isValid()){
-            if(!$article->getId()){
-                $article->setCreatedAt((new \DateTimeImmutable()));
-            }
-            $manager->persist($article);
-            $manager->flush();
-
-            return $this->redirectToRoute('blog_show', ['id' => $article->getId() ]);
-        
-        }
-                    
-        return $this->render('blog/create.html.twig', [
-                    'formArticle' => $form->createView(),
-                    'editMode' => $article->getId() !== null
-        ]);
-    }
-
-    /**
-     * @Route("/blog/{id}", name="blog_show")
-     */
-    public function show(Articles $article){
-
-        return $this->render('blog/show.html.twig',[
-                            'article' => $article
-        ]);
-=======
      * @Route("/blog/article/12", name="blog_show")
      */
     public function show(){
         return $this->render('blog/show.html.twig');
->>>>>>> parent of 2dd79ad... link des boutons lire plus
+
     }
 
 }
